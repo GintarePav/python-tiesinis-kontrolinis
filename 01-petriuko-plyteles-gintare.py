@@ -17,7 +17,7 @@ tarpasTarpPlyteliu = 2 / 10
 #tarpas matuojamas milimetrais, o plytelės centimetrais - reikia konvertuoti, kad atitiktų plytelių išmatavimus
 
 # Petriuko programos paskaičiavimai:
-plytelesPlotasM = (plytelesIlgis * plytelesPlotis) / 100 
+plytelesPlotasM = (plytelesIlgis / 100) * (plytelesPlotis / 100)
 pakuotesPadengiamasPlotasM = plytelesPlotasM * plyteliuSkaiciusPakuoteje
 visosPakuotesKaina = round(pakuotesPadengiamasPlotasM * vienoMKaina, 2)
 #plyteles plotas konvertuojamas į metrus, nes reikia sužinoti kelis kvadratinius metrus padengia viena pakuotė ir keliems kvadratiniams metrams reiks apskaičiuoti kainą
@@ -27,7 +27,7 @@ plytelesIsPlocio = math.ceil((garazoPlotis * 100) / (plytelesPlotis + tarpasTarp
 #garažo ilgis ir plotis konvertuojami į centimetrus, kad atitiktų plytelių ilgį ir plotį
 #Petriukas kiek vieną nupjautą plytelę skaičiuoja kaip pilną ("sveiką"), tad išnaudoja jų daugiau, t.y. plytelių skaičių apvalina į didesnę pusę, nes plytelių nuopjovų naudoti neketina; jos - "ant išmetimo"
 
-bendrasPlyteliuSkaicius = plytelesIsIlgio + plytelesIsPlocio
+bendrasPlyteliuSkaicius = plytelesIsIlgio * plytelesIsPlocio
 pakuociuSkaicius = math.ceil(bendrasPlyteliuSkaicius / plyteliuSkaiciusPakuoteje) 
 #"Senukai" pakuočių neardo, tad reikia pirkti pilnas, t.y. suapvalintas į didesnę pusę
 

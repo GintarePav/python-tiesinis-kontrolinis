@@ -7,15 +7,15 @@ baudosDydisEur = int(input("Koks baudos dydis eurais? "))
 baudosDydisCt = baudosDydisEur * 100
 
 # 1 ct. monetos išmatavimai milimetrais (skersmuo, storis) ir gramais (svoris):
-monetosSkersmuo = 16.25
-monetosStoris = 1.67
-monetosSvoris = 2.3
+MONETOS_SKERSMUO = 16.25
+MONETOS_STORIS = 1.67
+MONETOS_SVORIS = 2.3
 
 # 1. Kiek kilogramų monetų buvo nuvežta į banką (atsakymą suapvalinkite iki 3 skaičių po kablelio)?
-monetosKilogramais = round((monetosSvoris * baudosDydisCt) / 1000, 3)
+monetosKilogramais = round((MONETOS_SVORIS * baudosDydisCt) / 1000, 3)
 
 # 2. Kokio aukščio bokštą (metrais) galima pastatyti iš monetų (atsakymą suapvalinkite iki 2 skaičių po kablelio)?
-monetuBokstasM = round((monetosStoris * baudosDydisCt) / 1000, 2)
+monetuBokstasM = round((MONETOS_STORIS * baudosDydisCt) / 1000, 2)
 
 # 3. Kokio dydžio kvadratą, užpildytą monetomis, galima sudėlioti iš šių monetų (iš kiek monetų sudaryta kvadrato kraštinė?), kiek monetų sunaudota visam kvadratui, kiek monetų liko nepanaudota?
 monetosKrastineje = math.floor(math.sqrt(baudosDydisCt))
@@ -25,7 +25,7 @@ likeMonetos = baudosDydisCt - monetosKvadrate
 # kadangi kvadratui sudėlioti buvo ištraukta tik sveikoji monetų dalis, atėmus panaudotas monetas iš visų turėtų ganamas nepanaudotų monetų skaičius.
 
 # 4. Kokį plotą (m2) užima tas kvadratas (kvadratas iš 3 dalies) (atsakymą suapvalinkite iki 4 skaičių po kablelio)?
-krastinesIlgis = (monetosKrastineje * monetosSkersmuo) / 1000
+krastinesIlgis = (monetosKrastineje * MONETOS_SKERSMUO) / 1000
 kvadratoPlotas = round(krastinesIlgis ** 2, 4)
 
 print(f'Visos monetos sveria {monetosKilogramais}kg.\nIš jų susidaro {monetuBokstasM} m. bokštas\nIš monetų taip pat susidaro {kvadratoPlotas} kv. m. dydžio kvadratas.\nJame telpa {monetosKvadrate} monetos, o lieka {likeMonetos}')
